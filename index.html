@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+</body>
+</html>
+  <body>
+    <header>
+      <h1>Dziennik praktyki zawodowej</h1>
+      <nav>
+        <ul>
+            <ul class="zakladki">
+                <li><button onclick="wyswietlZakladke()">Metryczka</button></li>
+                <li><button onclick="wyswietlZakladke2()">Dziennik Zajec</button></li>
+                <li><button onclick="wyswietlZakladke3()">Podsumowanie</button></li>
+              </ul>
+            </nav>
+            </header>
+ 
+      <div id="zakladka1" class="zawartosc-zakladki">
+          <h2>Wprowadź dane ucznia i praktyki</h2>
+          <form>
+             <label>Imię:</label>
+             <input type="text" id="imie" required><br>
+             <label>Nazwisko:</label>
+            <input type="text" id="nazwisko" required><br>
+            <label>Klasa:</label>
+             <input type="text" id="klasa" required><br>
+             <label>Rok:</label>
+            <input type="number" id="rok-szkolny" required><br>
+             <label>Miejsce odbywania praktyk:</label>
+             <input type="text" id="place" required><br>
+             <label>Data rozpoczęcia:</label>
+            <input type="date" id="data-rozpoczecia" required><br>
+               <label>Data zakończenia:</label>
+                  <input type="date" id="data-zakonczenia" required>
+                  <br><br>
+                  <button type="button" onclick="showResults()">Zatwierdź</button>
+                </form>
+              </div>
+              <div id="wyniki" class="zawartosc-zakladki"></div>
+          </div>
+        
+      
+        
+        
+        
+        
+        <div id="zakladka2" class="zawartosc-zakladki">
+ 
+        <h2>Dziennik Praktyki Zawodowej</h2>
+        <form>
+          <h3>Wprowadz nowe zajecia</h3>
+          <label for="data">Wybierz datę zajęć:</label>
+          <input type="date" id="data" name="data" required><br><br>
+          
+          <label for="dzial">Wybierz dział:</label>
+          <select id="dzial" name="dzial" required>
+            <option value="" disabled selected>Wybierz dział</option>
+            <option value="Dział 1">Dział 1</option>
+            <option value="Dział 2">Dział 2</option>
+            <option value="Dział 3">Dział 3</option>
+          </select><br><br>
+          
+          <label for="temat">Wybierz temat:</label>
+          <select id="temat" name="temat" required>
+            <option value=""disabled selected>Wybierz temat</option>
+            <option value="Temat 1">Temat 1</option>
+            <option value="Temat 2">Temat 2</option>
+            <option value="Temat 3">Temat 3</option>
+          </select><br><br>
+          <h3>Opiekun</h3>
+
+      <select id="opiekun" name="opiekun" required>
+      <option value=""disabled selected>Opiekun</option>
+         <option value="Opiekun 1">Opiekun1</option>
+         <option value="Opiekun 2">Opiekun2</option>
+            <option value="Opiekun 3">Opiekun3</option>
+          </select><br><br>
+
+      <label for="sprawozdanie"><h4>Realizacja materiału:</h4></label><br>
+          Sprawozdanie: <textarea id="sprawozdanie" name="sprawozdanie" rows="10" cols="50"></textarea><br><br>
+          
+      <select id="check" name="check" required>
+            <option value=""disabled selected>Zrealizowano?</option>
+            <option value="Tak">Tak</option>
+            <option value="Nie">Nie</option>
+          </select><br><br>
+          
+          <label for="godziny">Ile godzin:</label>
+          <input type="number" id="godziny" name="godziny" min="1" max="6" required><br><br>
+          
+          
+          <input type="reset" value="Wyczysc">
+          
+          <button id = "asd">Zapisz dane</button>
+          
+          
+        </form>
+        
+              </div>
+              <div class="zawartosc-zakladki" id="entry"></div>
+              
+ 
+              <div class="zawartosc-zakladki" id="zakladka3">
+                <button id="generate">Generuj</button>
+                <table id="table">
+                  <thead>
+                    <tr>
+                      <th>DATA</th>
+                      <th>TEMAT</th>
+                      <th>OPIEKUN</th>
+                      <th>ZREALIZOWANO</th>
+                      <th>LICZBA GODZIN</th>
+                     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     
+                     
+                    </tr>
+                    <tr>
+                     
+                      
+                    <tr>
+                      
+                      
+                    </tr>
+                    <tr>
+                      
+    
+                    </tr>
+                   
+          </tbody>
+ </table>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores delectus dolorum velit dolor, rem exercitationem asperiores quaerat. Quisquam, corrupti vero quia consectetur molestiae dolores tempore autem,dolorum inventore omnis accusamus!</p>
+</div>
+              
+ 
+ </div>
+<footer>
+     <p>© Jakub Górecki 2023r.</p>
+ </footer>
+    
+ 
+<script>
+ 
+
+ 
+function showResults() {
+        const imie = document.getElementById("imie").value;
+        const nazwisko = document.getElementById("nazwisko").value;
+        const klasa = document.getElementById("klasa").value;
+        const rokSzkolny = document.getElementById("rok-szkolny").value;
+        const place = document.getElementById("place").value;
+        const dataRozpoczecia = document.getElementById("data-rozpoczecia").value;
+        const dataZakonczenia = document.getElementById("data-zakonczenia").value;
+        const wynikiDiv = document.getElementById("wyniki");
+ 
+        const imieINazwisko = imie + " " + nazwisko;
+        const odDo = "W terminie od " + dataRozpoczecia + " do " + dataZakonczenia + ".";
+        const tekst = "Dane ucznia: " + imieINazwisko + ", " + klasa + " " + "<br> Dane o praktyce: " + rokSzkolny + ", " + place + ", " + odDo;
+ 
+        wynikiDiv.innerHTML = tekst + '<br><button onclick="wyswietlZakladke()">Edytuj</button>';
+        document.getElementById("zakladka1").style.display = "none";
+        document.getElementById("wyniki").style.display = "block";
+ 
+      }
+ 
+function wyswietlZakladke() {
+    document.getElementById("zakladka1").style.display = 'block';
+    document.getElementById("zakladka2").style.display = 'none';
+    document.getElementById("zakladka3").style.display = 'none';
+    document.getElementById("wyniki").style.display = 'none';
+  }
+
+function wyswietlZakladke2() {
+    document.getElementById("zakladka1").style.display = 'none';
+    document.getElementById("zakladka2").style.display = 'block';
+    document.getElementById("zakladka3").style.display = 'none';
+  }
+
+function wyswietlZakladke3(){
+    document.getElementById("zakladka1").style.display = 'none';
+    document.getElementById("zakladka2").style.display = 'none';
+     document.getElementById("zakladka3").style.display = 'block';
+     document.getElementById("entry").style.display = "none";
+}
+
+function showEntry() {
+        const date = document.getElementById('data').value;
+        const dzial = document.getElementById('dzial').value;
+        const temat = document.getElementById("temat").value;
+        const opiekun = document.getElementById("opiekun").value;
+        const sprawozdanie = document.getElementById("sprawozdanie").value;
+        const check = document.getElementById("check").value;
+        const hours = document.getElementById("godziny").value;
+        const entryDiv = document.getElementById("entry");
+        
+        const tekst1 = "Data: " + date + "<br> Dział: " + dzial + "<br> Temat: " + temat + "<br> Opiekun: " + opiekun + 
+        "<br> Sprawozdanie: " + sprawozdanie + "<br> Realizacja:" + "<br> Zrealizowano? " + check + "<br> Godziny: " + hours;
+
+
+ 
+        entryDiv.innerHTML = tekst1;
+        document.getElementById("zakladka2").style.display = "none";
+        document.getElementById("entry").style.display = "block";
+
+ 
+
+
+}
+document.getElementById("generate").onclick=function()
+            {
+                document.getElementById("table").style.display="block";
+                
+                const table = document.getElementById("table");
+                const row = table.insertRow(-1);
+                const date = row.insertCell(0);
+                const topic = row.insertCell(1);
+                const opiekun = row.insertCell(2);
+                const realised = row.insertCell(3);
+                const hours = row.insertCell(4);
+                date.innerHTML = document.getElementById("data").value;
+                topic.innerHTML = document.getElementById("temat").value;
+                opiekun.innerHTML = document.getElementById("opiekun").value;
+                realised.innerHTML = document.getElementById("check").value;
+                hours.innerHTML = document.getElementById("godziny").value;
+                
+                return false;
+            }
+
+  const btn = document.getElementById("asd");
+  btn.addEventListener('click', function(evt){
+    evt.preventDefault();
+    showEntry();
+  } )
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+    </script>
+    </body>
+    </html>
+ 
+ 
